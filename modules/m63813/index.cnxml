@@ -1,0 +1,518 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Modulo 1 - ISI por limitación de ancho de banda de canal</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m63813</md:content-id>
+  <md:title>Modulo 1 - ISI por limitación de ancho de banda de canal</md:title>
+  <md:abstract>Este módulo representa en la primera parte (ISI1A) de manera gráfica los efectos de la ISI por limitación de ancho de banda de canal sobre diversas formas de pulso. En la segunda parte también representa los efectos de la ISI por limitación de ancho de banda de canal, a través de la probabilidad de error, sobre transmisiones Coseno Alzado y NRZP.</md:abstract>
+  <md:uuid>3c9cdbe1-ab20-480e-9084-20bd6d8fd000</md:uuid>
+</metadata>
+<featured-links>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit below.
+       Changes to the links section in the source will not be saved. -->
+    <link-group type="example">
+      <link url="https://www.youtube.com/watch?v=QMh_NWoeSIk" strength="3">Video tutorial ISI1B</link>
+      <link url="https://www.youtube.com/watch?v=JAY3iUmYtRQ" strength="3">Video tutorial ISI1A</link>
+    </link-group>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit above.
+       Changes to the links section in the source will not be saved. -->
+</featured-links>
+<content>
+    <section id="import-auto-idm198201920">
+      <title>Módulo 1 – ISI por limitación de ancho de banda de canal</title>
+      <section id="import-auto-idm475285424">
+        <title>Interferencia intersimbólica (ISI)</title>
+        <para id="import-auto-idm840814368"><emphasis effect="bold">Para transmitir una señal digital, no importa qué código de línea usemos, se necesita un canal de ancho de banda infinito. Sin embargo, sabemos que esto no es posible, el canal práctico tiene ancho de banda finito, por lo tanto, los pulsos se "chorrearan" o “dispersarán” y hará que estos entorpezcan la decisión sobre los bits vecinos. Observe la siguiente gráfica de tres bits seguidos que se han dispersado porque el canal no tiene ancho de banda infinito. Podría ocurrir, por ejemplo, que el tercer bit (combinación de los voltajes presentes y pasados) al llegar al receptor sea visto como un cero.</emphasis>
+        </para><figure id="import-auto-idm359618992">
+          <media id="import-auto-idm186400640" alt="">
+            <image mime-type="image/jpg" src="../../media/Imagen 1.jpg" height="185" width="405"/>
+          </media>
+        </figure>
+        <para id="import-auto-idm466927168">
+          <emphasis effect="bold">Aun cuando la Interferencia Intersimbólica es crítica al momento de recibir una señal, pudiéramos disminuir (o eliminar) los errores de decisión a través de ciertos métodos. Es posible prever la forma de los pulsos a la salida del receptor y de esta manera tratar de que el mismo no produzca ISI.</emphasis>
+        </para>
+      </section>
+      <section id="import-auto-idm584176384">
+        <title>Primer criterio de Nyquist</title>
+        <para id="import-auto-idm569179152">
+          <emphasis effect="bold">La idea es buscar un pulso recibido que tenga las siguientes características:</emphasis>
+        </para>
+        <para id="import-auto-idm389087760">
+          <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+            <m:semantics>
+              <m:mrow>
+                <m:mtable>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>p</m:mi>
+                            <m:mi>R</m:mi>
+                          </m:msub>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>t</m:mi>
+                          <m:mrow>
+                            <m:mo stretchy="false">)</m:mo>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mrow>
+                              <m:mo fence="true" stretchy="true">{</m:mo>
+                              <m:mrow>
+                                <m:mtable>
+                                  <m:mtr>
+                                    <m:mtd>
+                                      <m:mrow>
+                                        <m:mtable>
+                                          <m:mtr>
+                                            <m:mtd>
+                                              <m:mrow>
+                                                <m:mn>1</m:mn>
+                                                <m:mrow/>
+                                              </m:mrow>
+                                            </m:mtd>
+                                            <m:mtd>
+                                              <m:mrow>
+                                                <m:mi>;</m:mi>
+                                                <m:mrow/>
+                                              </m:mrow>
+                                            </m:mtd>
+                                            <m:mtd>
+                                              <m:mrow>
+                                                <m:mrow>
+                                                  <m:mi>t</m:mi>
+                                                  <m:mo stretchy="false">=</m:mo>
+                                                  <m:mn>0</m:mn>
+                                                </m:mrow>
+                                                <m:mrow/>
+                                              </m:mrow>
+                                            </m:mtd>
+                                          </m:mtr>
+                                        </m:mtable>
+                                        <m:mrow/>
+                                      </m:mrow>
+                                    </m:mtd>
+                                  </m:mtr>
+                                  <m:mtr>
+                                    <m:mtd>
+                                      <m:mrow/>
+                                    </m:mtd>
+                                  </m:mtr>
+                                  <m:mtr>
+                                    <m:mtd>
+                                      <m:mrow>
+                                        <m:mtable>
+                                          <m:mtr>
+                                            <m:mtd>
+                                              <m:mrow>
+                                                <m:mn>0</m:mn>
+                                                <m:mrow/>
+                                              </m:mrow>
+                                            </m:mtd>
+                                            <m:mtd>
+                                              <m:mrow>
+                                                <m:mi>;</m:mi>
+                                                <m:mrow/>
+                                              </m:mrow>
+                                            </m:mtd>
+                                            <m:mtd>
+                                              <m:mrow>
+                                                <m:mrow>
+                                                  <m:mi>t</m:mi>
+                                                  <m:mo stretchy="false">=</m:mo>
+                                                  <m:mrow>
+                                                    <m:mo stretchy="false">±</m:mo>
+                                                    <m:mstyle mathvariant="italic">
+                                                      <m:msub>
+                                                        <m:mtext>nt</m:mtext>
+                                                        <m:mi>b</m:mi>
+                                                      </m:msub>
+                                                    </m:mstyle>
+                                                  </m:mrow>
+                                                </m:mrow>
+                                                <m:mrow/>
+                                              </m:mrow>
+                                            </m:mtd>
+                                          </m:mtr>
+                                        </m:mtable>
+                                        <m:mrow/>
+                                      </m:mrow>
+                                    </m:mtd>
+                                  </m:mtr>
+                                </m:mtable>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                        <m:mrow/>
+                      </m:mrow>
+                    </m:mtd>
+                  </m:mtr>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow/>
+                    </m:mtd>
+                  </m:mtr>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow>
+                        <m:mtable>
+                          <m:mtr>
+                            <m:mtd>
+                              <m:mrow/>
+                            </m:mtd>
+                            <m:mtd>
+                              <m:mrow/>
+                            </m:mtd>
+                          </m:mtr>
+                        </m:mtable>
+                        <m:mrow>
+                          <m:mstyle mathvariant="italic">
+                            <m:mtext>BW</m:mtext>
+                          </m:mstyle>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mfrac>
+                            <m:mn>1</m:mn>
+                            <m:mrow>
+                              <m:mn>2</m:mn>
+                              <m:msub>
+                                <m:mi>t</m:mi>
+                                <m:mi>b</m:mi>
+                              </m:msub>
+                            </m:mrow>
+                          </m:mfrac>
+                        </m:mrow>
+                        <m:mrow/>
+                      </m:mrow>
+                    </m:mtd>
+                  </m:mtr>
+                </m:mtable>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0">alignl { stack {
+ size 12{p rSub { size 8{R} }  \( t \) = left lbrace  matrix {
+ matrix {
+1 {} # ; {} # t=0{}
+}  {} ##
+ {} ##
+ matrix {
+0 {} # ; {} # t= +-  ital "nt" rSub { size 8{b} } {}
+} {}
+}  right none }  {} # 
+ {} # 
+ matrix {
+ {} # {}
+}  ital "BW"= {  {1}  over  {2t rSub { size 8{b} } } }  {} 
+} } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </para>
+        <para id="import-auto-idm1934655872">
+          <emphasis effect="bold">El pulso p</emphasis>
+          <emphasis effect="bold">R</emphasis>
+          <emphasis effect="bold">(t) podría ser:</emphasis>
+        </para>
+        <para id="import-auto-idm385848352">
+          <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+            <m:semantics>
+              <m:mrow>
+                <m:mtable>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>p</m:mi>
+                            <m:mi>R</m:mi>
+                          </m:msub>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mi>t</m:mi>
+                          <m:mrow>
+                            <m:mo stretchy="false">)</m:mo>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mstyle mathvariant="italic">
+                              <m:msub>
+                                <m:mtext>Af</m:mtext>
+                                <m:mi>b</m:mi>
+                              </m:msub>
+                            </m:mstyle>
+                          </m:mrow>
+                          <m:mstyle mathvariant="italic">
+                            <m:mtext>Sinc</m:mtext>
+                          </m:mstyle>
+                          <m:mo stretchy="false">(</m:mo>
+                          <m:mstyle mathvariant="italic">
+                            <m:msub>
+                              <m:mtext>tf</m:mtext>
+                              <m:mi>b</m:mi>
+                            </m:msub>
+                          </m:mstyle>
+                          <m:mo stretchy="false">)</m:mo>
+                        </m:mrow>
+                        <m:mrow/>
+                      </m:mrow>
+                    </m:mtd>
+                  </m:mtr>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mi>R</m:mi>
+                        </m:msub>
+                        <m:mo stretchy="false">(</m:mo>
+                        <m:mi>f</m:mi>
+                        <m:mrow>
+                          <m:mo stretchy="false">)</m:mo>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mi>A</m:mi>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mo stretchy="false">∏</m:mo>
+                          <m:mrow>
+                            <m:mo fence="true" stretchy="true">(</m:mo>
+                            <m:mrow>
+                              <m:mstyle mathvariant="italic">
+                                <m:msub>
+                                  <m:mtext>ft</m:mtext>
+                                  <m:mi>b</m:mi>
+                                </m:msub>
+                              </m:mstyle>
+                            </m:mrow>
+                            <m:mo fence="true" stretchy="true">)</m:mo>
+                          </m:mrow>
+                        </m:mrow>
+                        <m:mrow/>
+                      </m:mrow>
+                    </m:mtd>
+                  </m:mtr>
+                </m:mtable>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0">alignl { stack {
+ size 12{p rSub { size 8{R} }  \( t \) = ital "Af" rSub { size 8{b} }  ital "Sinc" \(  ital "tf" rSub { size 8{b} }  \) }  {} # 
+P rSub { size 8{R} }  \( f \) =A Prod { left ( ital "ft" rSub { size 8{b} }  right )}  {} 
+} } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </para>
+        <para id="import-auto-idm395108688">
+          <emphasis effect="bold">Pero esto es imposible de lograr. Algo posible se lograría, por ejemplo, flexibilizando el requisito de ancho de banda; sería permitir un P(f) que ocupe un ancho de banda mayor que 0.5fb.</emphasis>
+        </para>
+        <figure id="import-auto-idm193956544">
+          <media id="import-auto-idm348801808" alt="">
+            <image mime-type="image/jpg" src="../../media/Imagen 4.jpg" height="177" width="348"/>
+          </media>
+        </figure>
+        <para id="import-auto-idm709300448">
+          <emphasis effect="bold">En el receptor lo que se hace es muestrear cada tb (sería como convolucionar p(t) con una sumatoria infinita de impulsos); lo que se desea es que, al muestrear cada pulso y sus vecinos, solo quede el valor del pulso en el instante de muestreo de interés.</emphasis>
+        </para>
+        <para id="import-auto-idm604584768">
+          <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+            <m:semantics>
+              <m:mrow>
+                <m:mrow>
+                  <m:mi>p</m:mi>
+                  <m:mo stretchy="false">(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mrow>
+                    <m:mo stretchy="false">)</m:mo>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mstyle mathvariant="italic">
+                      <m:mtext>Sinc</m:mtext>
+                    </m:mstyle>
+                  </m:mrow>
+                  <m:mo stretchy="false">(</m:mo>
+                  <m:msub>
+                    <m:mi>f</m:mi>
+                    <m:mi>b</m:mi>
+                  </m:msub>
+                  <m:mi>t</m:mi>
+                  <m:mo stretchy="false">)</m:mo>
+                  <m:mfrac>
+                    <m:mrow>
+                      <m:mstyle mathvariant="italic">
+                        <m:mtext>Cos</m:mtext>
+                      </m:mstyle>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mstyle mathvariant="italic">
+                        <m:mtext>πβ</m:mtext>
+                      </m:mstyle>
+                      <m:mi>t</m:mi>
+                      <m:mo stretchy="false">)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mn>1</m:mn>
+                        <m:mo stretchy="false">−</m:mo>
+                        <m:mo stretchy="false">(</m:mo>
+                      </m:mrow>
+                      <m:mn>4</m:mn>
+                      <m:mi mathvariant="italic">βt</m:mi>
+                      <m:msup>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                    </m:mrow>
+                  </m:mfrac>
+                </m:mrow>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0"> size 12{p \( t \) = ital "Sinc" \( f rSub { size 8{b} } t \)  {  { ital "Cos" \( 2 ital "πβ"t \) }  over  {1 -  \( 4βt \)  rSup { size 8{2} } } } } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </para>
+        <para id="import-auto-idm353634272">
+          <emphasis effect="bold">Cuando β=0 queda la forma de onda Sinc</emphasis>
+        </para>
+        <para id="import-auto-idm602977248">
+          <figure id="import-auto-idm459394352">
+            <media id="import-auto-idm353622336" alt="">
+              <image mime-type="image/jpg" src="../../media/Imagen 6.jpg" height="165" width="513"/>
+            </media>
+          </figure>
+          <emphasis effect="bold"/>
+        </para>
+        <figure id="import-auto-idm836235792">
+          <media id="import-auto-idm452956224" alt="">
+            <image mime-type="image/jpg" src="../../media/Imagen 7.jpg" height="137" width="392"/>
+          </media>
+        </figure>
+      </section>
+      <section id="import-auto-idm693570096">
+        <title>Diseño de Filtro Transmisor y Filtro Receptor óptimos considerando efecto de ruido e ISI</title>
+        <para id="import-auto-idm475048224">
+          <emphasis effect="bold">En un sistema compuesto por transmisor, canal (que suma ruido Gaussiano) y receptor, el objetivo es conseguir el conjunto Transmisor-receptor óptimos que logren elegir una forma de pulso que evite la ISI y lograr que la relación señal a ruido a la salida sea máxima para minimizar la probabilidad de error.</emphasis>
+        </para>
+        <para id="import-auto-idm593911488">
+          <emphasis effect="bold">Gracias a la desigualdad de Schwartz en la obtención del receptor óptimo para el caso que el canal solo contamina con ruido, se obtiene:</emphasis>
+        </para>
+        <para id="import-auto-idm462538672">
+          <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+            <m:semantics>
+              <m:mrow>
+                <m:mtable>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mo fence="true" stretchy="false">|</m:mo>
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:msub>
+                                    <m:mi>H</m:mi>
+                                    <m:mi>T</m:mi>
+                                  </m:msub>
+                                  <m:mo stretchy="false">(</m:mo>
+                                  <m:mi>f</m:mi>
+                                  <m:mo stretchy="false">)</m:mo>
+                                </m:mrow>
+                              </m:mrow>
+                              <m:mo fence="true" stretchy="false">|</m:mo>
+                            </m:mrow>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:msub>
+                              <m:mi>K</m:mi>
+                              <m:mn>1</m:mn>
+                            </m:msub>
+                          </m:mrow>
+                          <m:msqrt>
+                            <m:mrow>
+                              <m:mo fence="true" stretchy="false">|</m:mo>
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:msub>
+                                    <m:mi>P</m:mi>
+                                    <m:mi>R</m:mi>
+                                  </m:msub>
+                                  <m:mo stretchy="false">(</m:mo>
+                                  <m:mi>f</m:mi>
+                                  <m:mo stretchy="false">)</m:mo>
+                                </m:mrow>
+                              </m:mrow>
+                              <m:mo fence="true" stretchy="false">|</m:mo>
+                            </m:mrow>
+                          </m:msqrt>
+                        </m:mrow>
+                        <m:mrow/>
+                      </m:mrow>
+                    </m:mtd>
+                  </m:mtr>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow/>
+                    </m:mtd>
+                  </m:mtr>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mo fence="true" stretchy="false">|</m:mo>
+                            <m:mrow>
+                              <m:mrow>
+                                <m:msub>
+                                  <m:mi>H</m:mi>
+                                  <m:mi>R</m:mi>
+                                </m:msub>
+                                <m:mo stretchy="false">(</m:mo>
+                                <m:mi>f</m:mi>
+                                <m:mo stretchy="false">)</m:mo>
+                              </m:mrow>
+                            </m:mrow>
+                            <m:mo fence="true" stretchy="false">|</m:mo>
+                          </m:mrow>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:msub>
+                            <m:mi>K</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                        </m:mrow>
+                        <m:msqrt>
+                          <m:mrow>
+                            <m:mo fence="true" stretchy="false">|</m:mo>
+                            <m:mrow>
+                              <m:mrow>
+                                <m:msub>
+                                  <m:mi>P</m:mi>
+                                  <m:mi>R</m:mi>
+                                </m:msub>
+                                <m:mo stretchy="false">(</m:mo>
+                                <m:mi>f</m:mi>
+                                <m:mo stretchy="false">)</m:mo>
+                              </m:mrow>
+                            </m:mrow>
+                            <m:mo fence="true" stretchy="false">|</m:mo>
+                          </m:mrow>
+                        </m:msqrt>
+                        <m:mrow/>
+                      </m:mrow>
+                    </m:mtd>
+                  </m:mtr>
+                </m:mtable>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0">alignl { stack {
+ size 12{ lline H rSub { size 8{T} }  \( f \)  rline =K rSub { size 8{1} }  sqrt { lline P rSub { size 8{R} }  \( f \)  rline } }  {} # 
+ {} # 
+ lline H rSub { size 8{R} }  \( f \)  rline =K rSub { size 8{2} }  sqrt { lline P rSub { size 8{R} }  \( f \)  rline }  {} 
+} } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </para>
+        <para id="import-auto-idm402597392">
+          <emphasis effect="bold">Por eso si se toma la decisión de que el pulso sea uno de tipo coseno alzado, a la respuesta en frecuencia de los filtros se les llama raíz cuadrada de coseno alzado.</emphasis>
+        </para>
+      </section>
+      <section id="import-auto-idm592931248">
+        <title>Descarga de guías y programas para Módulo 1</title>
+        <para id="import-auto-idm595349376"><link url="Modulo1.rar"> Guías y programas Módulo 1 </link></para></section>
+      <section id="import-auto-idm546026160">
+        <title>Videos tutoriales para Módulo 1</title>
+        <para id="import-auto-idm182192528"><title>Video tutorial para Modulo ISI1A</title><link url="https://www.youtube.com/watch?v=JAY3iUmYtRQ"> Video Tutorial Módulo ISI1A </link>
+</para><para id="eip-403"><title>Video tutorial para Modulo ISI1B</title><link url="https://www.youtube.com/watch?v=QMh_NWoeSIk"> Video Tutorial Módulo ISI1B </link>
+</para></section>
+    </section>
+  </content>
+</document>

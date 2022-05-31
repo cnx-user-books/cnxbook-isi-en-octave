@@ -1,0 +1,88 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Modulo 2 - Modelos de canal para multitrayectoria</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m63819</md:content-id>
+  <md:title>Modulo 2 - Modelos de canal para multitrayectoria</md:title>
+  <md:abstract>Este módulo representa en la primera parte, de manera sencilla la respuesta imuplsiva en tiempo y frecuencia de diversos modelos de canales móviles para multitrayectoria. En la segunda parte, aplica los efectos de multitrayectoria de Modelos de canal SUI sobre transmisiones NRZp y Coseno Alzado para comparar su fortaleza frente a estos efectos a través de la probabilidad de error.</md:abstract>
+  <md:uuid>768d9a29-4fa1-429e-9a06-ffa1d7a79c9d</md:uuid>
+</metadata>
+<featured-links>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit below.
+       Changes to the links section in the source will not be saved. -->
+    <link-group type="example">
+      <link url=" https://www.youtube.com/watch?v=LR3ezegjB0g" strength="3">Video tutorial ModuloISI2A</link>
+      <link url="https://www.youtube.com/watch?v=FDPq1q7dIoY" strength="3">Video tutorial ModuloISI2B</link>
+    </link-group>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit above.
+       Changes to the links section in the source will not be saved. -->
+</featured-links>
+<content>
+    <section id="import-auto-idm1018970096">
+      <title>Módulo 2 – Modelos de canal para multitrayectoria </title>
+      <para id="import-auto-idm901379488">
+        <emphasis effect="bold">El análisis del módulo 1 se aplica cuando la transmisión no implica movimiento entre transmisor y receptor. Las imperfecciones del canal de radio móvil generan fenómenos que deterioran la calidad de la señal que llega al receptor y afectan la tasa de transmisión efectiva que pueda obtenerse. Los multitrayectos, el Shadowing y el efecto de la velocidad de desplazamiento del móvil son factores que producen un canal con desvanecimiento o Fadding Channel. Los multitrayectos son unos de los efectos más notables en el canal móvil.  </emphasis>
+      </para>
+      <para id="import-auto-idm1018920944">
+        <emphasis effect="bold">En los modelos típicos de aplicación de radio móvil, la radio base se encuentra en un lugar fijo, mientras el terminal móvil se mantiene en movimiento. Este arreglo crea lo que llamamos propagación multitrayectos, debido a la reflexión y difracción de los objetos que realizan obstrucción entre la radio base y el móvil. A causa de este fenómeno el móvil recibe la señal desde diferentes direcciones con diferentes amplitudes, fases, y retrasos, obteniendo en total una suma de la contribución de todos los trayectos.</emphasis>
+      </para>
+      <para id="import-auto-idm902659904">
+        <emphasis effect="bold">El Shadowing es un fenómeno que se produce cuando la línea de vista está obstruida por obstáculos. Dado que las características de estos obstáculos son aleatorias, también lo será el valor de la potencia recibida, causando grandes variaciones en la Relación Señal a Ruido (Signal to Noise Ratio=SNR).</emphasis>
+      </para>
+      <para id="import-auto-idm682384800">
+        <emphasis effect="bold">Por otro lado, el efecto Doppler se produce cuando uno o ambos extremos del proceso de comunicación se desplazan y se ve evidenciado en que la frecuencia de la señal recibida no es la misma que se envía, si el transmisor y receptor se alejan, la frecuencia recibida es menor, si el transmisor y receptor se acercan, la frecuencia recibida es mayor. El efecto global es que la señal recibida sufre una atenuación, un cambio en la frecuencia y en el ángulo con que llega al receptor. El resultado conjunto se llama desvanecimiento o Fading.</emphasis>
+      </para>
+      <figure id="import-auto-idm353029552">
+        <media id="import-auto-idm1018010608" alt="">
+          <image mime-type="image/jpg" src="../../media/Image1.jpg" height="261" width="395"/>
+        </media>
+      </figure>
+      <para id="import-auto-idm983118576">
+        <emphasis effect="bold">Para estudiar estos fenómenos existen modelos de propagación de gran escala y pequeña escala; los de gran escala permiten conocer el valor de las pérdidas de potencia para distancias muy grandes comparadas con la longitud de onda, a partir de estos métodos se estudia el radio de cobertura. Los de pequeña escala calculan variaciones rápidas de la señal cuando se producen cambios muy pequeños en la distancia o en tiempos muy cortos, estos modelos permiten calcular parámetros que influyen en la capacidad del canal y su ancho de banda.</emphasis>
+      </para>
+    </section>
+    <section id="import-auto-idm1042027840">
+      <title>Modelos de desvanecimiento para pequeña escala</title>
+      <para id="import-auto-idm1043684480">
+        <emphasis effect="bold">Los modelos de pequeña escala vienen dados por los cambios drásticos que sufre la señal en amplitud y fase que pueden ser el resultado de pequeños cambios (tan pequeño como la mitad de una longitud de onda) en el espacio de separación entre el receptor y el transmisor.</emphasis>
+      </para>
+      <section id="import-auto-idm883119568">
+        <title>Modelo Reayleigh</title>
+        <para id="import-auto-idm1008309168">
+          <emphasis effect="bold">Para los canales de radio móvil, la distribución de Rayleigh es normalmente usada para describir variaciones temporales de la envolvente de una señal con desvanecimiento plano o de una componente individual de multitrayecto. La distribución de Rayleigh asume que existen infinitos obstáculos entre el transmisor y receptor los cuales impiden la existencia de línea de vista ente ellos.  </emphasis>
+        </para>
+      </section>
+      <section id="import-auto-idm670765664">
+        <title>Modelo Rice</title>
+        <para id="import-auto-idm356652416">
+          <emphasis effect="bold">También conocido como distribución Rice o distribución Rician. Este modelo de canal es propio de las comunicaciones al aire libre y espacios abiertos, donde la emisora tiene línea de rayo directo con el receptor. La distribución Rice se describe en términos del parámetro “k”, el cual es definido como la relación entre la potencia del rayo directo y la potencia de los ecos o rebotes.</emphasis>
+        </para>
+      </section>
+    </section>
+    <section id="import-auto-idm362506976">
+      <title>Modelos de propagación a gran escala</title>
+      <para id="import-auto-idm1153991856">
+        <emphasis effect="bold">Estos son modelos usados para separaciones entre transmisor y receptor más largas y la variabilidad del ambiente es mucho más pequeña; se pueden clasificar en estadísticos, determinísticos y empíricos. Los estadísticos dependen del análisis de probabilidades. Los determinísticos usan las ecuaciones de Maxwell junto con leyes de reflexión y difracción. Los empíricos usan ecuaciones existentes obtenidas de varios resultados de mediciones.</emphasis>
+      </para>
+      <section id="import-auto-idm872871456">
+        <title>Modelo SUI</title>
+        <para id="import-auto-idm1159638992">
+          <emphasis effect="bold">Actualmente los ambientes son muy complejos para modelarlos con exactitud. Es por eso que en la práctica la mayoría de los estudios de simulaciones usan modelos empíricos, los cuales se basan en mediciones tomadas en varios ambientes reales. Uno de estos modelos empíricos es el modelo SUI.</emphasis>
+        </para>
+        <para id="import-auto-idm1021754400">
+          <emphasis effect="bold">El modelo SUI, modela el fading multitrayecto con 3 derivaciones de retardo no uniforme, por lo tanto, se puede decir que este modelo utiliza un rayo directo (si existe) y dos ecos, a continuación hay una representación de los 6 modelos de canal SUI y valores más importantes como retardos y atenuaciones.</emphasis>
+        </para>
+        <figure id="import-auto-idm398242608">
+          <media id="import-auto-idm1041593104" alt="">
+            <image mime-type="image/jpg" src="../../media/Image2.jpg" height="348" width="551"/>
+          </media>
+        </figure>
+      </section>
+    </section>
+    <section id="import-auto-idm1006412992">
+      <title>Descarga de guías y programas para Módulo 2</title>
+      <para id="import-auto-idm348261680"><link url="Modulo2.rar"> Guías y programas Módulo 2 </link></para></section>
+    <section id="import-auto-idm709151776">
+      <title>Videos Tutoriales para Módulo 2</title>
+      <para id="import-auto-idm984619120"><title>Video tutorial para Módulo ISI2A</title><link url="https://www.youtube.com/watch?v=LR3ezegjB0g"> Video para ModuloISI2A </link></para><para id="eip-842"><title>Video tutorial para Módulo ISI2B</title><link url="https://www.youtube.com/watch?v=FDPq1q7dIoY"> Video para ModuloISI2B </link></para></section>
+  </content>
+</document>

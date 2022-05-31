@@ -1,0 +1,15 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Octave</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m63817</md:content-id>
+  <md:title>Octave</md:title>
+  <md:abstract>Proporciona una breve información sobre Octave y una guía rápida para su instalación</md:abstract>
+  <md:uuid>a82e0c8c-5d86-46c8-b80b-4b85f3bbe5bf</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me"><title>Octave</title><!-- Insert module text here -->
+  GNU Octave es un programa libre para realizar cálculos numéricos; parte del proyecto GNU y considerado el equivalente libre de MATLAB, posee un intérprete que permite ejecutar órdenes en modo interactivo. El lenguaje que utiliza es compatible con el que usa MATLAB, por lo que se puede usar una gran variedad de las instrucciones y funciones que se utilizan en este programa. Puede generar scripts y también puede cargar archivos con funciones de MATLAB reconocibles por la extensión .m.</para><para id="eip-765">Puede ser instalado en sistemas operativos como Linux y Windows. En un principio fue creado para ser utilizado en un curso de diseño de reactores químicos, alrededor del año 1988, posteriormente, se decidió extenderlo y comenzó su desarrollo por parte de John W. Eaton, fue escrito por él y muchos otros, y puede seguir obteniendo colaboradores que deseen aportar escribiendo nuevas funciones o haciendo optimización de las ya existentes. Al ser su licencia pública general de GNU, puede ser compartido y utilizado libremente.</para><para id="eip-179"><title>Descarga de guías de instalación para Octave 3.8.2 y 4.2.0</title><link url="Octave.rar"> Guías de instalación para Octave </link></para></content>
+
+</document>

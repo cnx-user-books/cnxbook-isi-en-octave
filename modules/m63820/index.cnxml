@@ -1,0 +1,880 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Modulo 3 - Ecualizador de estructura transversal</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m63820</md:content-id>
+  <md:title>Modulo 3 - Ecualizador de estructura transversal</md:title>
+  <md:abstract>Este módulo ilustra en la primera parte, el funcionamiento de un ecualizador de estructura transversal para mejorar un pulso recibido que ha sido afectado por limitación de ancho de banda y ruido en el canal. En la segunda parte utiliza un pulso de prueba para calcular constantes de ecualizadores de 2, 4 y 6 registros y aplicarlos a una secuencia de bits pasada por una canal de ancho de banda limitado y ruido con la finalidad de reducir la probabilidad de error.</md:abstract>
+  <md:uuid>cc35be2d-12eb-4d5c-9cb5-2eb49995e75e</md:uuid>
+</metadata>
+<featured-links>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit below.
+       Changes to the links section in the source will not be saved. -->
+    <link-group type="example">
+      <link url="https://www.youtube.com/watch?v=dekDa30ukiI" strength="3">Video tutorial ISI3B</link>
+      <link url="https://www.youtube.com/watch?v=TC52Ka9TMZ4" strength="3">Video tutorial ISI3A</link>
+    </link-group>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit above.
+       Changes to the links section in the source will not be saved. -->
+</featured-links>
+<content>
+    <section id="import-auto-idm736888480">
+      <title>Módulo 3 – Ecualizador de estructura transversal </title>
+      <para id="import-auto-idm1050799664">
+        <emphasis effect="bold">Si se usa algún sistema para controlar ISI pero la forma de los pulsos resultantes no es perfecta, se puede colocar antes del circuito que decide un ecualizador el cual puede tener la estructura de un filtro transversal. La idea es la siguiente:</emphasis>
+      </para>
+      <figure id="import-auto-idm390813200">
+        <media id="import-auto-idm774535600" alt="">
+          <image mime-type="image/png" src="../../media/Image1.png" height="264" width="562"/>
+        </media>
+      </figure>
+      <para id="import-auto-idm406481776">
+        <emphasis effect="bold">Los coeficientes C</emphasis>
+        <emphasis effect="bold">k</emphasis>
+        <emphasis effect="bold"> pueden ajustarse para compensar cualquier cambio en el canal.</emphasis>
+      </para>
+      <para id="import-auto-idm623628784">
+        <emphasis effect="bold"/>
+      </para>
+      <para id="import-auto-idm630299648">
+        <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mstyle mathvariant="italic">
+                    <m:mtext>OUT</m:mtext>
+                  </m:mstyle>
+                </m:msub>
+                <m:mo stretchy="false">[</m:mo>
+                <m:mi>t</m:mi>
+                <m:mrow>
+                  <m:mo stretchy="false">]</m:mo>
+                  <m:mo stretchy="false">=</m:mo>
+                  <m:mrow>
+                    <m:munderover>
+                      <m:mo stretchy="false">∑</m:mo>
+                      <m:mrow>
+                        <m:mi>m</m:mi>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mrow>
+                          <m:mo stretchy="false">−</m:mo>
+                          <m:mi>N</m:mi>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mrow>
+                        <m:mi>m</m:mi>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mi>N</m:mi>
+                      </m:mrow>
+                    </m:munderover>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>C</m:mi>
+                        <m:mi>m</m:mi>
+                      </m:msub>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mstyle mathvariant="italic">
+                          <m:mtext>IN</m:mtext>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">[</m:mo>
+                      <m:mrow>
+                        <m:mi>t</m:mi>
+                        <m:mo stretchy="false">−</m:mo>
+                        <m:mo stretchy="false">(</m:mo>
+                      </m:mrow>
+                      <m:mrow>
+                        <m:mi>m</m:mi>
+                        <m:mo stretchy="false">+</m:mo>
+                        <m:mi>N</m:mi>
+                      </m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:msub>
+                        <m:mi>T</m:mi>
+                        <m:mi>S</m:mi>
+                      </m:msub>
+                      <m:mo stretchy="false">]</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mrow>
+              </m:mrow>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{P rSub { size 8{ ital "OUT"} }  \[ t \] = Sum cSub { size 8{m= - N} }  cSup { size 8{m=N} }  {C rSub { size 8{m} } P rSub { size 8{ ital "IN"} }  \[ t -  \( m+N \) T rSub { size 8{S} }  \] } } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </para>
+      <para id="import-auto-idm871107088">
+        <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mstyle mathvariant="italic">
+                            <m:mtext>OUT</m:mtext>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mo stretchy="false">[</m:mo>
+                        <m:mo stretchy="false">(</m:mo>
+                        <m:mrow>
+                          <m:mi>K</m:mi>
+                          <m:mo stretchy="false">+</m:mo>
+                          <m:mi>N</m:mi>
+                        </m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:msub>
+                          <m:mi>T</m:mi>
+                          <m:mi>S</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                          <m:mo stretchy="false">]</m:mo>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mrow>
+                            <m:munderover>
+                              <m:mo stretchy="false">∑</m:mo>
+                              <m:mrow>
+                                <m:mi>m</m:mi>
+                                <m:mo stretchy="false">=</m:mo>
+                                <m:mrow>
+                                  <m:mo stretchy="false">−</m:mo>
+                                  <m:mi>N</m:mi>
+                                </m:mrow>
+                              </m:mrow>
+                              <m:mrow>
+                                <m:mi>m</m:mi>
+                                <m:mo stretchy="false">=</m:mo>
+                                <m:mi>N</m:mi>
+                              </m:mrow>
+                            </m:munderover>
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>C</m:mi>
+                                <m:mi>m</m:mi>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>P</m:mi>
+                                <m:mstyle mathvariant="italic">
+                                  <m:mtext>IN</m:mtext>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mo stretchy="false">[</m:mo>
+                              <m:mo stretchy="false">(</m:mo>
+                              <m:mrow>
+                                <m:mi>K</m:mi>
+                                <m:mo stretchy="false">−</m:mo>
+                                <m:mi>m</m:mi>
+                              </m:mrow>
+                              <m:mo stretchy="false">)</m:mo>
+                              <m:msub>
+                                <m:mi>T</m:mi>
+                                <m:mi>S</m:mi>
+                              </m:msub>
+                              <m:mo stretchy="false">]</m:mo>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mrow/>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mstyle mathvariant="italic">
+                          <m:mtext>OUT</m:mtext>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">[</m:mo>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mrow>
+                        <m:mi>K</m:mi>
+                        <m:mo stretchy="false">+</m:mo>
+                        <m:mi>N</m:mi>
+                      </m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:msub>
+                        <m:mi>T</m:mi>
+                        <m:mi>S</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo stretchy="false">]</m:mo>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mrow>
+                          <m:mo fence="true" stretchy="true">{</m:mo>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>1</m:mn>
+                                    <m:mspace width="2em"/>
+                                    <m:mrow>
+                                      <m:mi>K</m:mi>
+                                      <m:mo stretchy="false">=</m:mo>
+                                      <m:mn>0</m:mn>
+                                    </m:mrow>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>0</m:mn>
+                                    <m:mspace width="2em"/>
+                                    <m:mrow>
+                                      <m:mi>K</m:mi>
+                                      <m:mo stretchy="false">=</m:mo>
+                                      <m:mrow>
+                                        <m:mrow>
+                                          <m:mo stretchy="false">±</m:mo>
+                                          <m:mn>1,</m:mn>
+                                        </m:mrow>
+                                        <m:mo stretchy="false">±</m:mo>
+                                        <m:mn>2,</m:mn>
+                                      </m:mrow>
+                                    </m:mrow>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mrow>
+                                      <m:mi>,</m:mi>
+                                      <m:mo stretchy="false">±</m:mo>
+                                      <m:mi>N</m:mi>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mrow/>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0">alignl { stack {
+ size 12{P rSub { size 8{ ital "OUT"} }  \[  \( K+N \) T rSub { size 8{S} }  \] = Sum cSub { size 8{m= - N} }  cSup { size 8{m=N} }  {C rSub { size 8{m} } P rSub { size 8{ ital "IN"} }  \[  \( K - m \) T rSub { size 8{S} }  \] } }  {} # 
+P rSub { size 8{ ital "OUT"} }  \[  \( K+N \) T rSub { size 8{S} }  \] = left lbrace  matrix {
+1~K=0 {} ##
+0~K= +- 1, +- 2, "."  "."  "."  "."  "." , +- N
+}  right none  {} 
+} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </para>
+      <para id="import-auto-idm2135122784">
+        <emphasis effect="bold">
+          <emphasis effect="italics">Pero la salida está retardada NTs segundos</emphasis>
+        </emphasis>
+      </para>
+      <para id="import-auto-idm479242544">
+        <emphasis effect="bold">
+          <emphasis effect="italics">Ejemplo 1:</emphasis>
+        </emphasis>
+      </para>
+      <figure id="import-auto-idm385299200">
+        <media id="import-auto-idm383001136" alt="">
+          <image mime-type="image/png" src="../../media/Image2.png" height="260" width="504"/>
+        </media>
+      </figure>
+      <para id="import-auto-idm354866112">
+        <emphasis effect="bold">Se usa un sistema ecualizador con 3 tomas:</emphasis>
+      </para>
+      <figure id="import-auto-idm474850896">
+        <media id="import-auto-idm529954816" alt="">
+          <image mime-type="image/png" src="../../media/Image3.png" height="220" width="391"/>
+        </media>
+      </figure>
+      <para id="import-auto-idm630326416">
+        <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow/>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mo fence="true" stretchy="false">‖</m:mo>
+                            <m:mrow>
+                              <m:mtable>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:mn>0</m:mn>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:mn>1</m:mn>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mn>0</m:mn>
+                                  </m:mtd>
+                                </m:mtr>
+                              </m:mtable>
+                            </m:mrow>
+                            <m:mo fence="true" stretchy="false">‖</m:mo>
+                          </m:mrow>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mrow>
+                            <m:mo fence="true" stretchy="true">[</m:mo>
+                            <m:mrow>
+                              <m:mtable>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:mn>0</m:mn>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mrow>
+                                        <m:mo stretchy="false">(</m:mo>
+                                        <m:mo stretchy="false">−</m:mo>
+                                        <m:mn>1</m:mn>
+                                      </m:mrow>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mrow>
+                                        <m:mo stretchy="false">(</m:mo>
+                                        <m:mo stretchy="false">−</m:mo>
+                                        <m:mn>2</m:mn>
+                                      </m:mrow>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:mn>1</m:mn>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:mn>0</m:mn>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mrow>
+                                        <m:mo stretchy="false">(</m:mo>
+                                        <m:mo stretchy="false">−</m:mo>
+                                        <m:mn>1</m:mn>
+                                      </m:mrow>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:mn>2</m:mn>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:mn>1</m:mn>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>p</m:mi>
+                                        <m:mstyle mathvariant="italic">
+                                          <m:mtext>IN</m:mtext>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:mn>0</m:mn>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                              </m:mtable>
+                            </m:mrow>
+                            <m:mo fence="true" stretchy="true">]</m:mo>
+                          </m:mrow>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mo fence="true" stretchy="true">[</m:mo>
+                            <m:mrow>
+                              <m:mtable>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>C</m:mi>
+                                        <m:mrow>
+                                          <m:mo stretchy="false">−</m:mo>
+                                          <m:mn>1</m:mn>
+                                        </m:mrow>
+                                      </m:msub>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>C</m:mi>
+                                        <m:mn>0</m:mn>
+                                      </m:msub>
+                                      <m:mrow/>
+                                    </m:mrow>
+                                  </m:mtd>
+                                </m:mtr>
+                                <m:mtr>
+                                  <m:mtd>
+                                    <m:msub>
+                                      <m:mi>C</m:mi>
+                                      <m:mn>1</m:mn>
+                                    </m:msub>
+                                  </m:mtd>
+                                </m:mtr>
+                              </m:mtable>
+                            </m:mrow>
+                            <m:mo fence="true" stretchy="true">]</m:mo>
+                          </m:mrow>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mrow/>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mrow/>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mo fence="true" stretchy="false">‖</m:mo>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>0</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>1</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mn>0</m:mn>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                          <m:mo fence="true" stretchy="false">‖</m:mo>
+                        </m:mrow>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mrow>
+                          <m:mo fence="true" stretchy="true">[</m:mo>
+                          <m:mrow>
+                            <m:mtable>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>1</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>0</m:mn>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mn>2</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>0</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mo stretchy="false">−</m:mo>
+                                      <m:mn>0</m:mn>
+                                    </m:mrow>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mn>3</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>1</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>0</m:mn>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mn>2</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                              <m:mtr>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mo stretchy="false">−</m:mo>
+                                      <m:mn>0</m:mn>
+                                    </m:mrow>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mn>1</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mo stretchy="false">−</m:mo>
+                                      <m:mn>0</m:mn>
+                                    </m:mrow>
+                                    <m:mtext>.</m:mtext>
+                                    <m:mn>3</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                                <m:mtd>
+                                  <m:mrow>
+                                    <m:mn>1</m:mn>
+                                    <m:mrow/>
+                                  </m:mrow>
+                                </m:mtd>
+                              </m:mtr>
+                            </m:mtable>
+                          </m:mrow>
+                          <m:mo fence="true" stretchy="true">]</m:mo>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mrow>
+                        <m:mo fence="true" stretchy="true">[</m:mo>
+                        <m:mrow>
+                          <m:mtable>
+                            <m:mtr>
+                              <m:mtd>
+                                <m:mrow>
+                                  <m:msub>
+                                    <m:mi>C</m:mi>
+                                    <m:mrow>
+                                      <m:mo stretchy="false">−</m:mo>
+                                      <m:mn>1</m:mn>
+                                    </m:mrow>
+                                  </m:msub>
+                                  <m:mrow/>
+                                </m:mrow>
+                              </m:mtd>
+                            </m:mtr>
+                            <m:mtr>
+                              <m:mtd>
+                                <m:mrow>
+                                  <m:msub>
+                                    <m:mi>C</m:mi>
+                                    <m:mn>0</m:mn>
+                                  </m:msub>
+                                  <m:mrow/>
+                                </m:mrow>
+                              </m:mtd>
+                            </m:mtr>
+                            <m:mtr>
+                              <m:mtd>
+                                <m:msub>
+                                  <m:mi>C</m:mi>
+                                  <m:mn>1</m:mn>
+                                </m:msub>
+                              </m:mtd>
+                            </m:mtr>
+                          </m:mtable>
+                        </m:mrow>
+                        <m:mo fence="true" stretchy="true">]</m:mo>
+                      </m:mrow>
+                      <m:mrow/>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow/>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0">alignl { stack {
+ {} # 
+ size 12{ ldline  matrix {
+0 {} ##
+1 {} ##
+0
+}  rdline = left [ matrix {
+p rSub { size 8{ ital "IN"} }  \( 0 \)  {} # p rSub { size 8{ ital "IN"} }  \(  - 1 \)  {} # p rSub { size 8{ ital "IN"} }  \(  - 2 \)  {} ##
+p rSub { size 8{ ital "IN"} }  \( 1 \)  {} # p rSub { size 8{ ital "IN"} }  \( 0 \)  {} # p rSub { size 8{ ital "IN"} }  \(  - 1 \)  {} ##
+p rSub { size 8{ ital "IN"} }  \( 2 \)  {} # p rSub { size 8{ ital "IN"} }  \( 1 \)  {} # p rSub { size 8{ ital "IN"} }  \( 0 \) {}
+}  right ] left [ matrix {
+C rSub { size 8{ - 1} }  {} ##
+C rSub { size 8{0} }  {} ##
+C rSub { size 8{1} } 
+}  right ]={}}  {} # 
+ ldline  matrix {
+0 {} ##
+1 {} ##
+0
+}  rdline = left [ matrix {
+1 {} # 0 "." 2 {} # 0 {} ##
+ - 0 "." 3 {} # 1 {} # 0 "." 2 {} ##
+ - 0 "." 1 {} #  - 0 "." 3 {} # 1{}
+}  right ] left [ matrix {
+C rSub { size 8{ - 1} }  {} ##
+C rSub { size 8{0} }  {} ##
+C rSub { size 8{1} } 
+}  right ] {} # 
+ {} 
+} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </para>
+      <para id="import-auto-idm356080896">
+        <emphasis effect="bold">Esto se resuelve  y produce las siguientes soluciones:</emphasis>
+      </para>
+      <para id="import-auto-idm407039472">
+        <emphasis effect="bold">C-1=-0.1792  C0=0.8961  C1=0.2509</emphasis>
+      </para>
+      <para id="import-auto-idm876146064">
+        <m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+          <m:semantics>
+            <m:mrow>
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mstyle mathvariant="italic">
+                            <m:mtext>OUT</m:mtext>
+                          </m:mstyle>
+                        </m:msub>
+                        <m:mo stretchy="false">[</m:mo>
+                        <m:mo stretchy="false">(</m:mo>
+                        <m:mrow>
+                          <m:mi>K</m:mi>
+                          <m:mo stretchy="false">+</m:mo>
+                          <m:mn>1</m:mn>
+                        </m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:msub>
+                          <m:mi>T</m:mi>
+                          <m:mi>S</m:mi>
+                        </m:msub>
+                        <m:mrow>
+                          <m:mo stretchy="false">]</m:mo>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:mrow>
+                            <m:munderover>
+                              <m:mo stretchy="false">∑</m:mo>
+                              <m:mrow>
+                                <m:mi>m</m:mi>
+                                <m:mo stretchy="false">=</m:mo>
+                                <m:mrow>
+                                  <m:mo stretchy="false">−</m:mo>
+                                  <m:mn>1</m:mn>
+                                </m:mrow>
+                              </m:mrow>
+                              <m:mrow>
+                                <m:mi>m</m:mi>
+                                <m:mo stretchy="false">=</m:mo>
+                                <m:mn>1</m:mn>
+                              </m:mrow>
+                            </m:munderover>
+                            <m:mrow>
+                              <m:msub>
+                                <m:mi>C</m:mi>
+                                <m:mi>m</m:mi>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>P</m:mi>
+                                <m:mstyle mathvariant="italic">
+                                  <m:mtext>IN</m:mtext>
+                                </m:mstyle>
+                              </m:msub>
+                              <m:mo stretchy="false">[</m:mo>
+                              <m:mo stretchy="false">(</m:mo>
+                              <m:mrow>
+                                <m:mi>K</m:mi>
+                                <m:mo stretchy="false">−</m:mo>
+                                <m:mi>m</m:mi>
+                              </m:mrow>
+                              <m:mo stretchy="false">)</m:mo>
+                              <m:msub>
+                                <m:mi>T</m:mi>
+                                <m:mi>S</m:mi>
+                              </m:msub>
+                              <m:mo stretchy="false">]</m:mo>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mrow>
+                      <m:mrow/>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mrow/>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0">alignl { stack {
+ size 12{P rSub { size 8{ ital "OUT"} }  \[  \( K+1 \) T rSub { size 8{S} }  \] = Sum cSub { size 8{m= - 1} }  cSup { size 8{m=1} }  {C rSub { size 8{m} } P rSub { size 8{ ital "IN"} }  \[  \( K - m \) T rSub { size 8{S} }  \] } }  {} # 
+ {} 
+} } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </para>
+      <para id="import-auto-idm472885696">
+        <emphasis effect="bold">En la práctica, este sistema ecualizador se coloca después del receptor y antes de la toma de decisiones, básicamente la idea es “forzar” al pulso a que sea máximo en su punto central y que sea cero en los extremos, se pueden corregir más puntos a medida que se agregan más registros al ecualizador.</emphasis>
+      </para>
+      <para id="import-auto-idm490494016">
+        <emphasis effect="bold">En la vida real, su funcionamiento consistie en enviar un pulso de prueba cada cierto tiempo para calcular los coeficientes dependiendo del canal y aplicar el ecualizador a una señal recibida para mejorar la forma de los pulsos y reducir la probabilidad de error en el sistema a la hora de la toma de decisiones.</emphasis>
+      </para>
+      <para id="import-auto-idm470641888">
+        <emphasis effect="bold">El número de registros siempre será par. El número de constantes y retardo de la señal ecualizada también dependerá del número de registros, es decir:</emphasis>
+      </para>
+      <para id="import-auto-idm470642016"><emphasis effect="bold">2N registros, 2N+1 constantes, (N)Ts de retardo.</emphasis>
+      </para><para id="import-auto-idm526288960">
+        <emphasis effect="bold">Por ejemplo:</emphasis>
+      </para>
+      <para id="import-auto-idm649367184"><emphasis effect="bold">N=2 representa a un ecualizador de 4 registros, 5 constantes y 2Ts de retardo en la señal ecualizada. </emphasis>
+      </para></section>
+    <section id="import-auto-idm525231232">
+      <title>
+        <emphasis effect="bold">Descarga de guías y programas para Módulo 3</emphasis>
+      </title>
+      <para id="import-auto-idm733741280"><link url="Modulo3.rar"> Guías y programas Módulo 3 </link></para></section>
+    <section id="import-auto-idm418370496">
+      <title><emphasis effect="bold">Videos Tutoriales para Módulo 3</emphasis></title><para id="eip-198"><title>Video Tutorial Módulo ISI3A</title><link url="https://www.youtube.com/watch?v=TC52Ka9TMZ4"> Video Tutorial para Módulo ISI3A </link></para><para id="eip-846"><title>Video Tutorial Módulo ISI3B</title><link url="https://www.youtube.com/watch?v=dekDa30ukiI"> Video Tutorial para Módulo ISI3B </link></para></section>
+  </content>
+</document>

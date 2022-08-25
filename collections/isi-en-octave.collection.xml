@@ -1,12 +1,13 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="es">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="es" authors="Alejandro Mu&#xF1;oz ,Isabel Torres">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
     <md:content-id>col12136</md:content-id>
     <md:title>ISI en Octave</md:title>
     <md:language>es</md:language>
     <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</md:license>
     <md:uuid>ad87e38b-0bd7-42fd-ae19-7287d392c071</md:uuid>
-<md:slug>isi-en-octave</md:slug>
-</metadata>
+    <md:slug>isi-en-octave</md:slug>
+  </metadata>
   <col:content>
     <col:module document="m63817"/>
     <col:module document="m63813"/>
